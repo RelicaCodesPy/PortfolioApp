@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 # LOAD CSS
-with open("styles/style.css") as f:
+with open("styles/styles.css") as f:
     st.markdown(
         f"<style>{f.read()}</style>",
         unsafe_allow_html=True
@@ -37,7 +37,7 @@ col1, col2 = st.columns([1, 2])
 with col1:
 
     st.image(
-        "assets/profile.jpg",
+        "assets/profile.png",
         use_container_width=True
     )
 
