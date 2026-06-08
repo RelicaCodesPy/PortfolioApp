@@ -6,161 +6,127 @@ st.set_page_config(
     layout="wide"
 )
 
+# ======================
 # LOAD CSS
+# ======================
 with open("styles/styles.css") as f:
-    st.markdown(
-        f"<style>{f.read()}</style>",
-        unsafe_allow_html=True
-    )
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+# ======================
+# HEADER
+# ======================
 st.title("👑 Leadership Journey")
 
 st.markdown("""
-Leadership has been an important part of my personal and academic growth.
-Through various organizations and student leadership positions, I have
-developed communication, teamwork, decision-making, and organizational skills.
-""")
+<div class='card'>
+Leadership has been a core part of my growth, helping me develop
+communication, teamwork, decision-making, and organizational skills.
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
-# OVERVIEW
+# ======================
+# METRICS DASHBOARD
+# ======================
+c1, c2, c3, c4 = st.columns(4)
 
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
+with c1:
     st.metric("Leadership Roles", "8")
 
-with col2:
+with c2:
     st.metric("Organizations", "5")
 
-with col3:
-    st.metric("Years of Leadership", "8+")
+with c3:
+    st.metric("Years Experience", "8+")
 
-with col4:
+with c4:
     st.metric("Current Position", "President")
 
 st.divider()
 
-# TIMELINE
-
-st.subheader("📅 Leadership Timeline")
+# ======================
+# TIMELINE SECTION
+# ======================
+st.markdown("<h2 class='section-title'>📅 Leadership Timeline</h2>", unsafe_allow_html=True)
 
 leadership_positions = [
-
-    {
-        "year": "2018–2019",
-        "position": "Grade 8 Representative",
-        "organization": "KABAYANI Club"
-    },
-
-    {
-        "year": "2022–2023",
-        "position": "Grade 12 Representative",
-        "organization": "YES-O"
-    },
-
-    {
-        "year": "2023–2024",
-        "position": "Class Vice President",
-        "organization": "BSCS 1A"
-    },
-
-    {
-        "year": "2024–2025",
-        "position": "Class President",
-        "organization": "BSCS 2A"
-    },
-
-    {
-        "year": "2024–2025",
-        "position": "BSCS 2A Representative",
-        "organization": "DISCSS"
-    },
-
-    {
-        "year": "Present",
-        "position": "President",
-        "organization": "Guincaiptan Katipunan ng Kabataan"
-    },
-
-    {
-        "year": "2025–2026",
-        "position": "President",
-        "organization": "DISCSS"
-    },
-
-    {
-        "year": "2025–2026",
-        "position": "Representative of DISCSS",
-        "organization": "CASCSC"
-    }
+    ("2018–2019", "Grade 8 Representative", "KABAYANI Club"),
+    ("2022–2023", "Grade 12 Representative", "YES-O"),
+    ("2023–2024", "Class Vice President", "BSCS 1A"),
+    ("2024–2025", "Class President", "BSCS 2A"),
+    ("2024–2025", "DISCSS Representative", "DISCSS"),
+    ("Present", "President", "Katipunan ng Kabataan"),
+    ("2025–2026", "President", "DISCSS"),
+    ("2025–2026", "Representative", "CASCSC")
 ]
 
-for item in leadership_positions:
-
-    with st.expander(
-        f"👑 {item['year']} | {item['position']}"
-    ):
-
-        st.write(
-            f"**Organization:** {item['organization']}"
-        )
+for year, position, org in leadership_positions:
+    with st.expander(f"👑 {year} | {position}"):
+        st.markdown(f"""
+        <div class='card'>
+        <b>Organization:</b> {org}
+        </div>
+        """, unsafe_allow_html=True)
 
 st.divider()
 
-# CURRENT LEADERSHIP ROLES
+# ======================
+# CURRENT POSITIONS
+# ======================
+st.markdown("<h2 class='section-title'>🌟 Current Leadership Roles</h2>", unsafe_allow_html=True)
 
-st.subheader("🌟 Current Leadership Positions")
+c1, c2 = st.columns(2)
 
-col1, col2 = st.columns(2)
+with c1:
+    st.markdown("""
+    <div class='card'>
+    <h3>👑 President</h3>
+    DISCSS<br>
+    A.Y. 2025–2026
+    </div>
+    """, unsafe_allow_html=True)
 
-with col1:
-
-    st.success("""
-👑 President
-
-DISCSS
-
-Academic Year 2025–2026
-""")
-
-with col2:
-
-    st.success("""
-🏛 Representative of DISCSS
-
-CASCSC
-
-Academic Year 2025–2026
-""")
+with c2:
+    st.markdown("""
+    <div class='card'>
+    <h3>🏛 Representative</h3>
+    CASCSC<br>
+    A.Y. 2025–2026
+    </div>
+    """, unsafe_allow_html=True)
 
 st.divider()
 
+# ======================
 # LEADERSHIP SKILLS
-
-st.subheader("💡 Leadership Skills")
+# ======================
+st.markdown("<h2 class='section-title'>💡 Leadership Skills</h2>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
-
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.progress(98, text="Leadership")
     st.progress(95, text="Communication")
     st.progress(95, text="Teamwork")
     st.progress(92, text="Decision Making")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
-
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.progress(90, text="Conflict Resolution")
     st.progress(93, text="Organization")
     st.progress(90, text="Public Speaking")
     st.progress(95, text="Event Management")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 st.divider()
 
+# ======================
 # RESPONSIBILITIES
-
-st.subheader("📋 Key Responsibilities")
+# ======================
+st.markdown("<h2 class='section-title'>📋 Key Responsibilities</h2>", unsafe_allow_html=True)
 
 role = st.selectbox(
     "Select Leadership Position",
@@ -172,105 +138,84 @@ role = st.selectbox(
     ]
 )
 
+st.markdown("<div class='card'>", unsafe_allow_html=True)
+
 if role == "DISCSS President":
-
     st.info("""
-• Lead the organization and oversee operations
-
-• Represent Computer Science students
-
-• Coordinate programs and activities
-
-• Promote student engagement and development
-
-• Collaborate with college organizations
+• Lead organization operations  
+• Represent Computer Science students  
+• Coordinate programs and activities  
+• Promote student development  
 """)
 
 elif role == "CASCSC Representative":
-
     st.info("""
-• Represent DISCSS in council meetings
-
-• Communicate student concerns
-
-• Participate in planning activities
-
-• Strengthen collaboration among organizations
+• Represent DISCSS in council meetings  
+• Communicate student concerns  
+• Participate in planning activities  
 """)
 
 elif role == "Class President":
-
     st.info("""
-• Lead class activities
-
-• Coordinate with faculty members
-
-• Represent classmates
-
-• Promote teamwork and academic excellence
+• Lead class activities  
+• Coordinate with faculty  
+• Represent classmates  
 """)
 
 else:
-
     st.info("""
-• Lead youth-centered community programs
-
-• Organize outreach and development activities
-
-• Promote youth participation
-
-• Strengthen community engagement
+• Lead youth community programs  
+• Organize outreach activities  
+• Promote youth engagement  
 """)
+
+st.markdown("</div>", unsafe_allow_html=True)
 
 st.divider()
 
-# LEADERSHIP PHILOSOPHY
-
-st.subheader("🎯 Leadership Philosophy")
+# ======================
+# PHILOSOPHY
+# ======================
+st.markdown("<h2 class='section-title'>🎯 Leadership Philosophy</h2>", unsafe_allow_html=True)
 
 st.markdown("""
-> "Leadership is not about authority; it is about service,
-> responsibility, and inspiring others to achieve a common goal."
+<div class='card'>
+<blockquote>
+"Leadership is not about authority; it is about service,
+responsibility, and inspiring others toward a common goal."
+</blockquote>
 
-I believe that effective leadership requires empathy,
-integrity, accountability, and continuous learning.
-By serving others and fostering collaboration,
-leaders can create meaningful and lasting impact.
-""")
-
-st.divider()
-
-# ACHIEVEMENT HIGHLIGHTS
-
-st.subheader("🏆 Leadership Highlights")
-
-st.success("""
-✔ Grade 8 Representative (KABAYANI Club)
-
-✔ Grade 12 Representative (YES-O)
-
-✔ Class Vice President (BSCS 1A)
-
-✔ Class President (BSCS 2A)
-
-✔ DISCSS Representative
-
-✔ President, Guincaiptan Katipunan ng Kabataan
-
-✔ President, DISCSS
-
-✔ Representative of DISCSS, CASCSC
-""")
+I believe leadership requires empathy, integrity,
+accountability, and continuous growth.
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
+# ======================
+# SUMMARY
+# ======================
+st.markdown("<h2 class='section-title'>🏆 Leadership Highlights</h2>", unsafe_allow_html=True)
+
+st.markdown("""
+<div class='card'>
+✔ Grade 8 Representative  
+✔ Grade 12 Representative  
+✔ Class Vice President  
+✔ Class President  
+✔ DISCSS President  
+✔ CASCSC Representative  
+✔ Youth Organization Leader  
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
+# ======================
 # FOOTER
-
+# ======================
 st.markdown("""
 <div class='footer'>
-
-Leadership is about creating opportunities,
-empowering others, and making a positive impact.
-
+Leadership is about service, growth, and positive impact.
 </div>
 """, unsafe_allow_html=True)
