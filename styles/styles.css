@@ -1,0 +1,60 @@
+/* Main Background */
+.main {
+    background-color: #f8fafc;
+}
+
+/* Remove Streamlit Branding Space */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Hero Card */
+.hero-card{
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+    padding:40px;
+    border-radius:20px;
+    color:white;
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Statistics Card */
+.stat-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.08);
+}
+
+/* Section Title */
+.section-title{
+    color:#0ea5e9;
+    font-weight:700;
+}
+
+/* Project Card */
+.project-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:15px;
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.08);
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    color:gray;
+    margin-top:40px;
+}
