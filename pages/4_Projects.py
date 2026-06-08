@@ -19,7 +19,7 @@ st.title("🎨 Graphic Arts Projects")
 
 st.markdown("""
 <div class='card'>
-### Role: Graphic Artist
+Role: Graphic Artist
 
 This collection showcases my graphic design and digital art projects
 developed through competitions, advocacy campaigns, and creative exploration.
