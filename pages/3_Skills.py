@@ -6,28 +6,29 @@ st.set_page_config(
     layout="wide"
 )
 
+# ======================
 # LOAD CSS
+# ======================
 with open("styles/styles.css") as f:
-    st.markdown(
-        f"<style>{f.read()}</style>",
-        unsafe_allow_html=True
-    )
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+# ======================
+# HEADER
+# ======================
 st.title("💡 Skills & Competencies")
 
 st.markdown("""
-My skills continue to grow through academic learning,
-leadership experiences, competitions, workshops,
-hackathons, and personal projects.
-
-As a Computer Science student, I continuously improve
-both my technical and creative abilities.
-""")
+<div class='card'>
+My skills continue to grow through academics, leadership,
+hackathons, workshops, and personal projects.
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
-# TABS
-
+# ======================
+# TABS SECTION
+# ======================
 tab1, tab2, tab3, tab4 = st.tabs([
     "💻 Programming",
     "🌐 Web Development",
@@ -35,45 +36,43 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "👑 Leadership"
 ])
 
+# ======================
 # PROGRAMMING
-
+# ======================
 with tab1:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
-    st.subheader("Programming Languages")
-
+    st.subheader("Programming Skills")
     st.progress(70, text="Python")
     st.progress(65, text="Java")
     st.progress(60, text="C++")
     st.progress(60, text="C")
 
-    st.info("""
-Current Level: Basic to Intermediate
+    st.info("Basic to Intermediate programming level with continuous improvement.")
 
-I continue improving my programming skills through
-coursework, coding exercises, and practical applications.
-""")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-# WEB
-
+# ======================
+# WEB DEVELOPMENT
+# ======================
 with tab2:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
-    st.subheader("Web Development")
-
+    st.subheader("Web Development Skills")
     st.progress(70, text="HTML")
     st.progress(65, text="CSS")
 
-    st.info("""
-I have foundational knowledge in web development
-and continue exploring modern web technologies
-and user-centered design principles.
-""")
+    st.info("Foundational web development knowledge with UI/UX awareness.")
 
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# ======================
 # DESIGN
-
+# ======================
 with tab3:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
-    st.subheader("Graphic Design & Creativity")
-
+    st.subheader("Graphic Design Skills")
     st.progress(95, text="Canva")
     st.progress(90, text="Photo Manipulation")
     st.progress(90, text="Poster Design")
@@ -81,23 +80,22 @@ with tab3:
     st.progress(85, text="UI/UX Design")
 
     st.success("""
-🏆 Multiple Graphic Design Festival (GDF) Awards
-
-🏆 Best in Photo Manipulation
-
-🏆 Best Abstract Art
-
-🏆 Most Popular Graphic Design
-
-🏆 Nitezen's Choice
+🏆 Graphic Design Festival Awards  
+🏆 Best Photo Manipulation  
+🏆 Best Abstract Art  
+🏆 Most Popular Design  
+🏆 Nitezen’s Choice
 """)
 
-# LEADERSHIP
+    st.markdown("</div>", unsafe_allow_html=True)
 
+# ======================
+# LEADERSHIP
+# ======================
 with tab4:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
     st.subheader("Leadership & Soft Skills")
-
     st.progress(98, text="Leadership")
     st.progress(95, text="Communication")
     st.progress(95, text="Teamwork")
@@ -105,96 +103,95 @@ with tab4:
     st.progress(90, text="Public Speaking")
     st.progress(95, text="Problem Solving")
 
+    st.markdown("</div>", unsafe_allow_html=True)
+
 st.divider()
 
+# ======================
 # TECH STACK
+# ======================
+st.markdown("<h2 class='section-title'>🛠 Technology Stack</h2>", unsafe_allow_html=True)
 
-st.subheader("🛠 Technology Stack")
+c1, c2, c3 = st.columns(3)
 
-col1, col2, col3 = st.columns(3)
-
-with col1:
-
+with c1:
     st.markdown("""
-### Programming
+<div class='card'>
+<b>Programming</b>
 
-- Python
-- Java
-- C++
-- C
-""")
+- Python  
+- Java  
+- C++  
+- C  
+</div>
+""", unsafe_allow_html=True)
 
-with col2:
-
+with c2:
     st.markdown("""
-### Web Technologies
+<div class='card'>
+<b>Web Technologies</b>
 
-- HTML
-- CSS
-- Streamlit
-""")
+- HTML  
+- CSS  
+- Streamlit  
+</div>
+""", unsafe_allow_html=True)
 
-with col3:
-
+with c3:
     st.markdown("""
-### Design Tools
+<div class='card'>
+<b>Design Tools</b>
 
-- Canva
-- Photo Editing Tools
-- Digital Art Tools
-""")
+- Canva  
+- Photo Editing  
+- Digital Art Tools  
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
-# INTERACTIVE SELF-ASSESSMENT
-
-st.subheader("📊 Skill Confidence Assessment")
+# ======================
+# INTERACTIVE SECTION
+# ======================
+st.markdown("<h2 class='section-title'>📊 Skill Confidence</h2>", unsafe_allow_html=True)
 
 skill = st.selectbox(
     "Choose a Skill",
-    [
-        "Python",
-        "Java",
-        "C++",
-        "C",
-        "HTML",
-        "CSS",
-        "Graphic Design",
-        "Leadership"
-    ]
+    ["Python", "Java", "C++", "C", "HTML", "CSS", "Graphic Design", "Leadership"]
 )
 
-confidence = st.slider(
-    f"Confidence Level in {skill}",
-    0,
-    100,
-    80
-)
+confidence = st.slider("Confidence Level", 0, 100, 80)
 
-st.success(
-    f"Confidence Level in {skill}: {confidence}%"
-)
+st.markdown("<div class='card'>", unsafe_allow_html=True)
+st.success(f"{skill}: {confidence}% Confidence Level")
+st.markdown("</div>", unsafe_allow_html=True)
 
 st.divider()
 
+# ======================
 # LEARNING JOURNEY
-
-st.subheader("🚀 Currently Learning")
+# ======================
+st.markdown("<h2 class='section-title'>🚀 Currently Learning</h2>", unsafe_allow_html=True)
 
 st.markdown("""
-- Advanced Python Programming
-- Web Application Development
-- Cybersecurity Concepts
-- UI/UX Design Principles
-- Artificial Intelligence Fundamentals
-- Software Development Best Practices
-""")
+<div class='card'>
+
+- Advanced Python Programming  
+- Web Application Development  
+- Cybersecurity Concepts  
+- UI/UX Design Principles  
+- Artificial Intelligence Fundamentals  
+- Software Development Best Practices  
+
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
+# ======================
 # CAREER INTERESTS
-
-st.subheader("🎯 Career Interests")
+# ======================
+st.markdown("<h2 class='section-title'>🎯 Career Interests</h2>", unsafe_allow_html=True)
 
 interests = st.multiselect(
     "Select Career Areas",
@@ -210,38 +207,17 @@ interests = st.multiselect(
 )
 
 if interests:
-    st.info(
-        f"Selected Interests: {', '.join(interests)}"
-    )
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
+    st.info(f"Selected: {', '.join(interests)}")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 st.divider()
 
-# SUMMARY
-
-st.markdown("""
-<div class='card'>
-
-<h3>🌟 Skills Summary</h3>
-
-I combine technical knowledge, creativity,
-and leadership to continuously improve
-as a future technology professional.
-
-My strengths include programming fundamentals,
-graphic design, communication, teamwork,
-and student leadership.
-
-</div>
-""", unsafe_allow_html=True)
-
-st.divider()
-
+# ======================
+# FOOTER
+# ======================
 st.markdown("""
 <div class='footer'>
-
-Learning never stops. Every project,
-competition, and leadership experience
-is an opportunity for growth.
-
+Learning never stops — every experience is growth.
 </div>
 """, unsafe_allow_html=True)
