@@ -6,43 +6,49 @@ st.set_page_config(
     layout="wide"
 )
 
+# ======================
 # LOAD CSS
+# ======================
 with open("styles/styles.css") as f:
-    st.markdown(
-        f"<style>{f.read()}</style>",
-        unsafe_allow_html=True
-    )
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+# ======================
+# HEADER
+# ======================
 st.title("🏆 Achievements & Recognition")
 
 st.markdown("""
+<div class='card'>
 This page showcases my academic achievements, competition awards,
-leadership recognitions, and participation in various educational,
-creative, and technology-related activities throughout my journey.
-""")
+leadership recognitions, and participation in various activities
+throughout my academic journey.
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
-# OVERVIEW
+# ======================
+# METRICS DASHBOARD
+# ======================
+c1, c2, c3, c4 = st.columns(4)
 
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
+with c1:
     st.metric("Academic Honors", "15+")
 
-with col2:
+with c2:
     st.metric("Competition Awards", "20+")
 
-with col3:
+with c3:
     st.metric("Hackathons", "5+")
 
-with col4:
+with c4:
     st.metric("Leadership Awards", "8+")
 
 st.divider()
 
-# TABS
-
+# ======================
+# TABS (MODERN STRUCTURE)
+# ======================
 tab1, tab2, tab3, tab4 = st.tabs([
     "🎓 Elementary",
     "🏫 Junior High",
@@ -50,249 +56,155 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "💻 College"
 ])
 
+# ======================
 # ELEMENTARY
-
+# ======================
 with tab1:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
     st.subheader("Guincaiptan Elementary School")
 
     st.markdown("""
-### Grade 1
-- 2nd Honors
-
-### Grade 2
-- 2nd Honors
-
-### Grade 3
-- 2nd Honors
-- Best in English
-- MTAP Contestant
-
-### Grade 4
-- 2nd Honors
-
-### Grade 5
-- 1st Honors
-- Best in Filipino
-
-### Grade 6
-- With Honors
+- Grade 1–2: 2nd Honors  
+- Grade 3: 2nd Honors, Best in English, MTAP Participant  
+- Grade 5: 1st Honors, Best in Filipino  
+- Grade 6: With Honors  
 """)
 
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# ======================
 # JUNIOR HIGH
-
+# ======================
 with tab2:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
-    st.subheader("Junior High School Achievements")
+    st.subheader("Junior High School")
 
     st.markdown("""
-### Grade 7
-- With Honors
-
-### Grade 8
-- With Honors
-
-### Grade 9
-- With Honors
-- 2nd Placer Math Quiz Bee Competition
-
-### Grade 10
-- With Honors
+- With Honors (Grades 7–10)  
+- Math Quiz Bee 2nd Placer  
 """)
 
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# ======================
 # SENIOR HIGH
-
+# ======================
 with tab3:
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
-    st.subheader("Senior High School Achievements")
+    st.subheader("Senior High School")
 
     st.markdown("""
-### Grade 12
-- With Honors
+- With Honors (Grade 12)  
 """)
 
-# COLLEGE
+    st.markdown("</div>", unsafe_allow_html=True)
 
+# ======================
+# COLLEGE (NESTED TABS)
+# ======================
 with tab4:
-
-    year1, year2, year3 = st.tabs([
-        "1st Year",
-        "2nd Year",
-        "3rd Year"
-    ])
-
-    # 1ST YEAR
+    year1, year2, year3 = st.tabs(["1st Year", "2nd Year", "3rd Year"])
 
     with year1:
-
+        st.markdown("<div class='card'>", unsafe_allow_html=True)
         st.markdown("""
-### Academic Year 2023–2024
-
-- Silver in Athletics Women (4x100 Relay)
-- Facilitator (TechFusion 2024)
+- Silver Medal Athletics (4x100 Relay)  
+- TechFusion Facilitator  
 """)
-
-    # 2ND YEAR
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with year2:
-
+        st.markdown("<div class='card'>", unsafe_allow_html=True)
         st.markdown("""
-### Academic Year 2024–2025
-
-#### Academic Recognition
-- Vice President’s Lister (1st Sem. A.Y. 2024–2025)
-- Dean’s Lister (2nd Sem. A.Y. 2024–2025)
-
-#### Graphic Design Festival (GDF 2024)
-- Idiosyncratic Graphic Design (Semi Finals)
-- Best in Photo Manipulation (Semi Finals)
-- Facilitator (GDF 2024)
-- 1st Runner Up
-- Rank 2 (Art Exhibit)
-- Rank 2 (Semi Finals)
-- Top Performing Speed Art (Grand Finals)
-- Nitezen’s Choice (Grand Finals)
-- Best in One Color Shade Art (Grand Finals)
-- Best Abstract Art (Grand Finals)
-- Top Performing Finalist in Fixing a Broken Art Challenge (Grand Finals)
-- Most Popular Graphic Design (Grand Finals)
-
-#### Cybersecurity & Technology
-- PicoCTF Activity Workshop 2025: From Zero to Hero
-- Participation in Hackathon: Cyber Challenge (TechFusion 2025)
-
-#### Special Recognition
-- Student of the Year Top 3 Awardee (TechFusion 2025)
-
-#### Web Development Hackathon 2025
-- Guest Participant
-- Guest Top 7 (Preliminary)
-- Guest Team Top 5 (Semi-Finals)
-- Web Guardian Award (PicoCTF Cyber Challenge Semi-Finals)
+- Dean’s Lister  
+- Vice President’s Lister  
+- GDF 2024 Multiple Awards  
+- Hackathon Participant  
+- Student of the Year Top 3 Awardee  
 """)
-
-    # 3RD YEAR
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with year3:
-
+        st.markdown("<div class='card'>", unsafe_allow_html=True)
         st.markdown("""
-### Academic Year 2025–2026
-
-#### Academic Recognition
-- Dean’s Lister (1st Sem. A.Y. 2025–2026)
-
-#### Academic & Professional Development
-- Participation in FILKOM UB Academic and Cultural Exchange on Information Technology (FACE-IT)
-- AI+X: Understanding and Applying Artificial Intelligence
-
-#### Web Development Hackathon 2025
-- Top 5 Defender in SQL Injection Challenge
-- Top 4 in Web Development Hackathon (Semi-Finals Cross-over)
-- Cryptography MVP (Semi-Finals Cross-over)
-- Best in Backend Development
-- Best in UI/UX Design
-- 3rd Runner Up
-- Host Team Participant
-- Crypto Alchemist Award
-- Top 3 Attacker in SQL Injection Challenge
-
-#### Graphic Design Festival
-- Board of Adjudicator (GDF 2025)
+- Dean’s Lister  
+- AI & Tech Exchange Programs  
+- Hackathon Awards (Best Backend, UI/UX, Crypto MVP)  
 """)
+        st.markdown("</div>", unsafe_allow_html=True)
 
 st.divider()
 
+# ======================
 # FEATURED ACHIEVEMENTS
+# ======================
+st.markdown("<h2 class='section-title'>🌟 Featured Achievements</h2>", unsafe_allow_html=True)
 
-st.subheader("🌟 Featured Achievements")
-
-featured = st.selectbox(
-    "Select Achievement Category",
-    [
-        "Academic Excellence",
-        "Graphic Design",
-        "Hackathons",
-        "Leadership"
-    ]
+feature = st.selectbox(
+    "Select Category",
+    ["Academic Excellence", "Graphic Design", "Hackathons", "Leadership"]
 )
 
-if featured == "Academic Excellence":
+st.markdown("<div class='card'>", unsafe_allow_html=True)
 
+if feature == "Academic Excellence":
     st.success("""
-🎓 Vice President's Lister
-
-🎓 Dean's Lister
-
-🎓 Student of the Year Top 3 Awardee
-
-🎓 Multiple Honors Recipient
+🎓 Dean’s Lister  
+🎓 Vice President’s Lister  
+🎓 Student of the Year Top 3  
 """)
 
-elif featured == "Graphic Design":
-
+elif feature == "Graphic Design":
     st.success("""
-🎨 1st Runner Up (GDF 2024)
-
-🎨 Best in Photo Manipulation
-
-🎨 Best Abstract Art
-
-🎨 Most Popular Graphic Design
-
-🎨 Nitezen's Choice
-
-🎨 Best in UI/UX Design
+🎨 GDF 2024 Winner Awards  
+🎨 Best in Photo Manipulation  
+🎨 Best Abstract Art  
+🎨 UI/UX Recognition  
 """)
 
-elif featured == "Hackathons":
-
+elif feature == "Hackathons":
     st.success("""
-💻 Web Development Hackathon 2025
-
-🔐 Cryptography MVP
-
-🔐 Crypto Alchemist Award
-
-🔐 Top SQL Injection Defender
-
-🔐 Top SQL Injection Attacker
+💻 Web Dev Hackathon Awards  
+🔐 Cryptography MVP  
+🔐 Backend Excellence Award  
 """)
 
 else:
-
     st.success("""
-👑 DISCSS President
-
-👑 CASCSC Representative
-
-👑 Class President
-
-👑 Class Vice President
-
-👑 Youth Organization Leader
+👑 DISCSS President  
+👑 CASCSC Representative  
+👑 Class President  
 """)
+
+st.markdown("</div>", unsafe_allow_html=True)
 
 st.divider()
 
-# TIMELINE SUMMARY
-
-st.subheader("📈 Achievement Journey")
+# ======================
+# SUMMARY
+# ======================
+st.markdown("<h2 class='section-title'>📈 Journey Summary</h2>", unsafe_allow_html=True)
 
 st.progress(100)
 
-st.info("""
-From elementary honors to university-level leadership,
-graphic design competitions, hackathons, and academic excellence,
-my journey reflects continuous growth, perseverance, and dedication.
-""")
+st.markdown("""
+<div class='card'>
+From elementary achievements to college leadership,
+hackathons, and design competitions — this journey
+represents growth, discipline, and excellence.
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
+# ======================
+# FOOTER
+# ======================
 st.markdown("""
 <div class='footer'>
-
-Success is built through continuous learning,
-hard work, creativity, and leadership.
-
+Success is built through consistency, passion, and leadership.
 </div>
 """, unsafe_allow_html=True)
