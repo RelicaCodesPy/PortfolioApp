@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 # LOAD CSS
-with open("styles/style.css") as f:
+with open("styles/styles.css") as f:
     st.markdown(
         f"<style>{f.read()}</style>",
         unsafe_allow_html=True
@@ -49,7 +49,7 @@ st.divider()
 with st.expander("🧚 Enchanted Whispers"):
 
     st.image(
-        "assets/artwork1.jpg",
+        "assets/artwork7.jpg",
         use_container_width=True
     )
 
@@ -86,7 +86,7 @@ and visual harmony.
 with st.expander("❤️ One Chance"):
 
     st.image(
-        "assets/artwork2.jpg",
+        "assets/artwork6.jpg",
         use_container_width=True
     )
 
@@ -122,7 +122,7 @@ to inspire determination and excellence.
 with st.expander("🌍 A Fading World: Our Last Chance"):
 
     st.image(
-        "assets/artwork3.jpg",
+        "assets/artwork5.jpg",
         use_container_width=True
     )
 
@@ -193,7 +193,7 @@ for future generations.
 with st.expander("🎨 Fragments of Imagination"):
 
     st.image(
-        "assets/artwork5.jpg",
+        "assets/artwork3.jpg",
         use_container_width=True
     )
 
@@ -228,7 +228,7 @@ The artwork represents limitless creativity and artistic freedom.
 with st.expander("🌌 Beyond Reality"):
 
     st.image(
-        "assets/artwork6.jpg",
+        "assets/artwork2.jpg",
         use_container_width=True
     )
 
@@ -264,7 +264,7 @@ and human connection with nature.
 with st.expander("🌸 Neon Serenity"):
 
     st.image(
-        "assets/artwork7.jpg",
+        "assets/artwork1.jpg",
         use_container_width=True
     )
 
